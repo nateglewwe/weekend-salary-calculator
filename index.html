@@ -10,8 +10,25 @@
     <h1>Salary Calculator</h1>
   </header>
   <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
+    <div id="inputSection">
+      <h2>Add Employee</h2>
+      <form onSubmit="submitForm(event)">
+        <label for="firstName">First Name:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <label for="lastName">Last Name:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+        <label for="IDNum">ID Num:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+        <label for="jobTitle">Job Title:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <label for="salary">Annual Salary:</label><br>
+        <input id="firstName" type="text" placeholder="Barack" data-testid="firstNameInput" required/>
+        <input id="lastName" type="text" placeholder="Obama" data-testid="lastNameInput" required/>
+        <input id="IDNum" type="number" placeholder="080461" data-testid="idInput" required/>
+        <input id="jobTitle" type="text" placeholder="President" data-testid="titleInput" required/>
+        <input id="salary" type="number" placeholder="400000" data-testid="annualSalaryInput" required/><br>
+        <button type="submit" value="Submit" data-testid="submitButton">Submit</button>
+      </form>
+    </div>
+    <div id="tableSection">
+      <h2>Employees</h2>
+    </div>
   </main>
   <footer>
     <p>Total Monthly</p>
