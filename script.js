@@ -39,8 +39,16 @@ function submitForm (event) {
     let totalMonthly = document.querySelector('#totalMonthly');
     totalMonthly.innerHTML = sum / 12;
 
+    //Checking if we go over budget
+    if ((sum/12 > 20000)) {
+        let finalTotal = document.querySelector('#finalTotal');
+        let footer = document.querySelector('#footer');
+        finalTotal.innerHTML = `🚨Oh God no we're over budget🚨 nooooooooooooooooooooo $<span id="totalMonthly">${sum / 12}</span>`;
+        footer.classList.add('over-budget');
+    }
+
     //Clearing out the form inputs using resetInputFields function
-    //resetInputFields()
+    resetInputFields()
 }
 
 function resetInputFields () {

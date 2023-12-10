@@ -8,3 +8,14 @@ table td    {
     border: 1px solid black;
     padding: 4px;
 }
+
+#finalTotal {
+    margin-top: 8px;
+}
+
+.over-budget {
+    color:red;
+    font-size: 400%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
