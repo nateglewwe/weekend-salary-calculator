@@ -34,7 +34,7 @@ function submitForm (event) {
     for(num of salaries) {
         sum = sum + num;
     }
-    console.log(sum);
+    //console.log(sum);
     
     let totalMonthly = document.querySelector('#totalMonthly');
     totalMonthly.innerHTML = sum / 12;
@@ -66,7 +66,30 @@ function resetInputFields () {
 }
 
 function deleteRow(event) {
+    //Deleting the relevent row, and its corresponding index in the salaries array
     let del=event.target.parentNode.parentNode;
+    //console.log(del.rowIndex);
+    salaries.splice((del.rowIndex-1),1);
+    console.log(salaries);
     del.remove();
+
+    //Re-calculating Total Monthly
+    let sum = 0;
+    for(num of salaries) {
+        sum = sum + num;
+    }
+    //console.log(sum);
+    
+    let totalMonthly = document.querySelector('#totalMonthly');
+    totalMonthly.innerHTML = sum / 12;
+
+    //Re-checking if we got back under budget
+    if ((sum/12 < 20000)) {
+        let finalTotal = document.querySelector('#finalTotal');
+        let footer = document.querySelector('#footer');
+        finalTotal.innerHTML = `Total Monthly: $<span id="totalMonthly">${sum / 12}</span>`;
+        footer.classList.remove('over-budget');
+    }
+
     event.preventDefault();
 }
