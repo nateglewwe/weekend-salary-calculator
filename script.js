@@ -40,7 +40,7 @@ function submitForm (event) {
     totalMonthly.innerHTML = sum / 12;
 
     //Clearing out the form inputs using resetInputFields function
-    resetInputFields()
+    //resetInputFields()
 }
 
 function resetInputFields () {
@@ -55,4 +55,10 @@ function resetInputFields () {
     IDNum.value = '';
     jobTitle.value = '';
     salary.value = '';
+}
+
+function deleteRow(event) {
+    let del=event.target.parentNode.parentNode;
+    del.remove();
+    event.preventDefault();
 }
